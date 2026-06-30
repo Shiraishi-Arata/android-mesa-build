@@ -83,6 +83,7 @@ jobs:
             -Dtools=drm-shim \
             -Dgallium-drivers=zink,virgl,freedreno,softpipe \
             -Dfreedreno-kmds=kgsl,msm \
+
             -Dbuildtype=release
           ninja -C "build-android" install
           mkdir /tmp/mesa/output
