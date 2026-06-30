@@ -20,7 +20,7 @@ jobs:
       - name: Set Up Environment
         run: |
           sudo apt update
-          sudo apt install -y libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev llvm-dev
+          sudo apt install -y libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
           pip3 install mako meson ninja
 
       - name: Set ndkver,sdkver and work_dir
@@ -81,7 +81,7 @@ jobs:
             -Dosmesa=true \
             -Dvulkan-drivers= \
             -Dtools=drm-shim \
-            -Dgallium-drivers=zink,virgl,panfrost,freedreno,softpipe \
+            -Dgallium-drivers=zink,virgl,freedreno,softpipe \
             -Dfreedreno-kmds=kgsl,msm \
             -Dbuildtype=release
           ninja -C "build-android" install
